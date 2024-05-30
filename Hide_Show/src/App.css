@@ -1,0 +1,35 @@
+.App {
+  text-align: center;
+}
+
+button {
+  margin: 20px;
+  padding: 10px 20px;
+  background-color: #5bc0de;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #31b0d5;
+}
+
+.posts-container {
+  transition: all 0.5s ease;
+}
+
+.posts-container.hide {
+  display: none;
+}
+
+.posts-container.show {
+  display: block;
+}
+
+.post {
+  border: 1px solid #5bc0de;
+  padding: 20px;
+  margin: 10px 0;
+}
