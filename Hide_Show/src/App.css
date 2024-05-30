@@ -33,3 +33,10 @@ button:hover {
   padding: 20px;
   margin: 10px 0;
 }
+.posts-container.hide {
+  display: none;
+}
+
+.posts-container.show {
+  display: block;
+}

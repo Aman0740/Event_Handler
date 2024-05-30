@@ -26,14 +26,16 @@ function App() {
   return (
     <div className="App">
       <button onClick={fetchPosts}>GET POSTS</button>
-      <div className={showPosts ? 'posts-container show' : 'posts-container hide'}>
-        {posts.map((post) => (
-          <div key={post.id} className="post">
-            <h2>{post.title}</h2>
-            <p>{post.body}</p>
-          </div>
-        ))}
-      </div>
+      {showPosts && (
+        <div className="posts-container">
+          {posts.map((post) => (
+            <div key={post.id} className="post">
+              <h2>{post.title}</h2>
+              <p>{post.body}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
