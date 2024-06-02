@@ -2,36 +2,27 @@ import React, { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [posts, setPosts] = useState([]);
-  const [showPosts, setShowPosts] = useState(false);
+  const [data, setData] = useState(null);
 
-  const fetchPosts = async () => {
-    // Simulate fetching posts from an API
-    const fetchedPosts = [
-      {
-        id: 1,
-        title: 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
-        body: 'quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto',
-      },
-      {
-        id: 2,
-        title: 'qui est esse',
-        body: 'est rerum tempore vitae sequi sint nihil reprehenderit dolor beatae ea dolores neque fugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis qui aperiam non debitis possimus qui neque nisi nulla',
-      },
-    ];
-    setPosts(fetchedPosts);
-    setShowPosts(true);
+  const fetchData = () => {
+    fetch('https://fakestoreapi.com/users')
+      .then(response => response.json())
+      .then(json => setData(json))
+      .catch(error => console.error('Error fetching data:', error));
   };
 
   return (
     <div className="App">
-      <button onClick={fetchPosts}>GET POSTS</button>
-      {showPosts && (
-        <div className="posts-container">
-          {posts.map((post) => (
-            <div key={post.id} className="post">
-              <h2>{post.title}</h2>
-              <p>{post.body}</p>
+      <button className="fetch-button" onClick={fetchData}>Fetch Random Data</button>
+      {data && (
+        <div className="data-display">
+          {data.map((user) => (
+            <div key={user.id} className="user-card">
+              <h3>User ID: {user.id}</h3>
+              <p>Name: {user.name.firstname} {user.name.lastname}</p>
+              <p>Email: {user.email}</p>
+              <p>Username: {user.username}</p>
+              <p>Phone: {user.phone}</p>
             </div>
           ))}
         </div>

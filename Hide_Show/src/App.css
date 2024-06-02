@@ -1,42 +1,45 @@
+/* Main container for the app */
 .App {
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Fetch button styles */
+.fetch-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Fetch button hover effect */
+.fetch-button:hover {
+  background-color: #0056b3;
+}
+
+/* Individual data display box styles */
+.data-display {
+  
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 20px;
   text-align: center;
 }
 
-button {
-  margin: 20px;
-  padding: 10px 20px;
-  background-color: #5bc0de;
-  border: none;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #31b0d5;
-}
-
-.posts-container {
-  transition: all 0.5s ease;
-}
-
-.posts-container.hide {
-  display: none;
-}
-
-.posts-container.show {
-  display: block;
-}
-
-.post {
-  border: 1px solid #5bc0de;
-  padding: 20px;
-  margin: 10px 0;
-}
-.posts-container.hide {
-  display: none;
-}
-
-.posts-container.show {
-  display: block;
+/* Styling for preformatted text within the data display area */
+pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
